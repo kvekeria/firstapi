@@ -9,6 +9,12 @@ from .database import engine
 from .config import settings
 
 app = FastAPI()
+
+@app.get('/')
+def home():
+    return {'welcome to' : 'firstapi'}
+
+
 origins = ['*']
 
 app.add_middleware(
